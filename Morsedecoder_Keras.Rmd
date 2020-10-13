@@ -563,6 +563,6 @@ https://keras.rstudio.com/articles/examples/lstm_seq2seq.html
 
 Chollet, F. and Allaire, JJ et al. (2017): R Interface to Keras. https://github.com/rstudio/keras
 
-Goodfellow et al. (): 
+Goodfellow et al. (2016): Deep Learning. Adaptive Computation and Machine Learning. The MIT Press, Massachusetts.
 
 Hochreiter, S. and Schmidhuber, J. (1997): Long Short-term Memory. Neural Computation 9(8):1735-80. https://doi.org/10.1162/neco.1997.9.8.1735
