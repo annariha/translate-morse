@@ -27,41 +27,12 @@ latinToMorse <- function(l){
 # function that takes in a string in latin alphabet and translates it to morsecode 
 # using the above defined dictionary and the latinToMorse-function
 
-textToMorsecode <- function(latinStr) {
-  # input text should be tokenized
-
+textToMorsecode <- function(latinstr) {
+  # input text should be tolower 
+  latinstr <- tolower(latinstr)
+  # filter for letters and symbols in latinalphabet (created for the dictionary)
+  latinstr <- latinstr[which(latinstr %in% latinalphabet)]
   # apply the above function latinToMorse to latin letters+spaces
-  out = sapply(latinStr, latinToMorse, USE.NAMES = FALSE)
-  
+  out = sapply(latinstr, latinToMorse, USE.NAMES = FALSE)
   return(out)
 }
-
-# TODO: insert "" to text vector
-# function modified and taken from: https://stackoverflow.com/questions/18951248/insert-elements-in-a-vector-in-r
-
-insert.gap.at <- function(a, pos){
-  # include a gap 
-  include <- c("")
-  result <- vector("list",2*length(pos)+1)
-  result[c(TRUE,FALSE)] <- split(a, cumsum(seq_along(a) %in% (pos+1)))
-  result[c(FALSE,TRUE)] <- include
-  unlist(result)
-}
-
-text = c("h", "e", " ", "y", "o")
-positions = c(1,4)
-
-insert.at(text, positions)
-# This works! 
-
-# Now, I need to define the positions automatically.
-# I have the tokenized text vector and 
-# I want a positions-vector with every position 
-# that needs to be followed by a ""-like gap.
-# These are all the positions that are NOT preceded or followed by a " "-space.
-
-# example input 
-gutenberg_works(title == "The Time Machine")
-hgwellstm <- gutenberg_download(35)
-text <- strsplit(tolower(paste0(hgwellstm$text,collapse="")),"")[[1]]
-example_text <- text[1:16]
