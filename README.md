@@ -6,5 +6,3 @@ In `Morsedecoder_Keras.Rmd`, the process is presented and explained in more deta
 
 The data with sentence pairs in English and French is available here: http://www.manythings.org/anki/fra-eng.zip 
 For the presented example, only the English sentences were used. 
-
-
